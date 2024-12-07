@@ -1,0 +1,22 @@
+name: LAB | Setting Up a CI/CD Pipeline for a Multi-Page React Native Mobile App
+
+on:
+    push
+
+jobs:
+    build:
+        name: LAB | Android
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check out code
+            uses: actions/checkout@v2 # Uses GitHub's official action to check out the code
+        
+            # Step 2: Set up Node.js environment
+            - name: Set up Node.js
+            uses: actions/setup-node@v2
+            with:
+            node-version: "14"
+
+            - name: Install dependencies
+            run: npm install
